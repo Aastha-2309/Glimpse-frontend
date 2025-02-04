@@ -15,7 +15,7 @@ const EraDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://13.233.75.216/api/api/eras/${id}`)
+      .get(`https://13.233.75.216/api/api/eras/${id}`)
       .then((response) => setEraDetails(response.data))
       .catch((error) => console.error("Error fetching era details:", error));
   }, [id]);

@@ -34,7 +34,7 @@ const FutureNote = () => {
 
     try {
       const response = await axios.post(
-        'http://13.233.75.216/api/api/future-notes',
+        'https://13.233.75.216/api/api/future-notes',
         {
           message,
           date: selectedDate.toISOString(), // Convert to ISO string for consistency

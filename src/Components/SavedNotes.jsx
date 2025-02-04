@@ -14,7 +14,7 @@ const SavedNotes = () => {
       }
 
       try {
-        const response = await axios.get('http://13.233.75.216/api/api/future-notes', {
+        const response = await axios.get('https://13.233.75.216/api/api/future-notes', {
           headers: {
             Authorization: `Bearer ${token}`, 
           },
