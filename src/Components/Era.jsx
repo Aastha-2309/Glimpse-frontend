@@ -10,7 +10,7 @@ const Era = () => {
 
   useEffect(() => { 
     axios
-      .get("http://localhost:8080/api/eras")
+      .get("http://13.233.75.216/api/api/eras")
       .then((response) => setEras(response.data))
       .catch((error) => console.error("There was an error fetching the eras:", error));
   }, []);
