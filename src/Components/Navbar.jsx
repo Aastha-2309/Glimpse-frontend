@@ -71,7 +71,8 @@ const Navbar = () => {
       <ul>
         <li>
           <Link to="/">
-            <img height="auto" width="auto" src={`${CLOUDINARY_URL}logosunflower_zuatwx`} alt="Logo Sunflower" className="logo-image" />
+            <img width="400"
+  height="600" src={`${CLOUDINARY_URL}logosunflower_zuatwx`} alt="Logo Sunflower" className="logo-image" />
           </Link>
         </li>
         <li>

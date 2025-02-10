@@ -16,8 +16,8 @@ const Home = () => {
 
       <div id="home" className="sec">
         <div>
-          {/* <img width="800" height="600" src={`${CLOUDINARY_URL}astronaut_dplspn`} alt="Astronaut" className="centered-image" /> */}
-          <img
+          <img width="800" height="600" src={`${CLOUDINARY_URL}astronaut_dplspn`} sizes="(max-width: 768px) 90vw, (max-width: 1024px) 70vw, 600px" alt="Astronaut" className="centered-image" loading="eager" />
+          {/* <img
   src="https://res.cloudinary.com/djjmj40t9/image/upload/dpr_auto,f_auto,q_auto,w_600,h_400/v1739207107/astronaut_dplspn"
   srcSet="
     https://res.cloudinary.com/djjmj40t9/image/upload/dpr_auto,f_auto,q_auto,w_300,h_200/v1739207107/astronaut_dplspn 300w,
@@ -29,7 +29,8 @@ const Home = () => {
   className="centered-image"
   width="400"
   height="600"
-/>
+  loading="eager"
+/> */}
 
         </div>
         <TravelButton />
