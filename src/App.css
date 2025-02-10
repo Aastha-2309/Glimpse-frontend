@@ -548,10 +548,11 @@ p {
   display: block;
   margin: 0 auto;
   width: 100%;  /* Makes the image responsive */
-  max-width: 85%;  /* Restricts it from going too wide */
+  max-width: 45%;  /* Restricts it from going too wide */
   height: auto;
   padding-top: 50px;  /* Adjust if needed */
-  object-fit: cover;  /* Ensures aspect ratio is maintained */
+   /* Ensures aspect ratio is maintained */
+  aspect-ratio: 500 / 600;
 }
 
 li {
@@ -952,8 +953,8 @@ textarea:focus::placeholder {
   }
 
   .centered-image {
-    width: 65%;
-    max-width: 75%;
+  
+    max-width: 35%;
   }
 
   .logo-image {
@@ -1030,8 +1031,8 @@ textarea:focus::placeholder {
   }
 
   .centered-image {
-    width: 60%;
-    max-width: 70%;
+   
+    max-width: 60%;
     padding-top: 35px;
     margin-bottom: 30px;
   }
