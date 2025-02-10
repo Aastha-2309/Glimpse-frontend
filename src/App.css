@@ -7,7 +7,7 @@ html {
   margin: 0;
   padding: 0;
   background-color: #000;
-  cursor: url("./src/assets/images/Spaceship.png"), pointer !important;
+  cursor: url("https://res.cloudinary.com/djjmj40t9/image/upload/dpr_auto,f_auto,q_auto/v1739207108/Spaceship_gj8pxj.png"), pointer !important;
 }
 
 h1 {
