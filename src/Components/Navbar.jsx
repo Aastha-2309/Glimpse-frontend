@@ -93,7 +93,7 @@ const Navbar = () => {
           <div className="popover__wrapper">
             <a href="#">
              
-              {notes > 0 ? <button className="notification-dot"></button> : null}
+              {notes > 0 ? <button className="notification-dot" aria-label="Dot"></button> : null}
               <div>
                 <FaUserAstronaut className="userButton" />
               </div>
@@ -104,11 +104,11 @@ const Navbar = () => {
                   <p>Welcome {loggedInUser || "Guest"}</p>
                 </div>
                 {loggedInUser ? (
-                  <button className='modalButton' onClick={handleLogout}>Logout</button>
+                  <button className='modalButton' aria-label="Logout Button" onClick={handleLogout}>Logout</button>
                 ) : (
-                  <button className='modalButton' onClick={() => navigate('/login')}>Login</button>
-                )}{notes > 0 ? <button className="notification-dot1" onClick={handleSeen}></button> : null}
-                <button className='modalButton' onClick={handleUnlockPast}>Unlock the Past</button>
+                  <button className='modalButton' aria-label="Login Button" onClick={() => navigate('/login')}>Login</button>
+                )}{notes > 0 ? <button className="notification-dot1" aria-label="Dot2" onClick={handleSeen}></button> : null}
+                <button className='modalButton' aria-label="Unlock past button" onClick={handleUnlockPast}>Unlock the Past</button>
                 
               </div>
             </div>

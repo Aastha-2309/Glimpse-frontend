@@ -21,10 +21,10 @@ const {loggedInUser, setLoggedInUser}=useUser();
 
   return (
     <div className="travel-buttons">
-      <button className="time-travel-button">Time to Travel</button>
+      <button className="time-travel-button" aria-label="Time travel button">Time to Travel</button>
       <div className="sub-buttons">
-        <button className="to-past-button" onClick={handleToPast}>To Past</button>
-        <button className="to-future-button" onClick={handleToFuture}>To Future</button>
+        <button className="to-past-button" aria-label="Past button" onClick={handleToPast}>To Past</button>
+        <button className="to-future-button" aria-label="Future button" onClick={handleToFuture}>To Future</button>
       </div>
     </div>
   );

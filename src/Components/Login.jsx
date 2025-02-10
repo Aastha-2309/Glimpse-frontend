@@ -85,7 +85,7 @@ function Login() {
                         value={loginInfo.password}
                     />
                 </div>
-                <button className='loginButton' type='submit'>Login</button>
+                <button className='loginButton' type='submit' aria-label="Login Button">Login</button>
                 <span>New to GLIMPSE ?
                     <Link className='loginLink' to="/signup">Signup</Link>
                 </span>

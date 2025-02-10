@@ -84,7 +84,7 @@ const EraDetails = () => {
               <div className="movieName">
                 <h2>{detail.name}</h2>
                 <div className="overlayMusic">
-        <button onClick={() => handlePlayPause(detail._id, detail.mediaUrl)}>
+        <button aria-label="Play Pause" onClick={() => handlePlayPause(detail._id, detail.mediaUrl)}>
           {playingMusicId === detail._id ? (
             
               <FaCirclePause className="playButton" />

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import TimeCapsuleButton from "./TimeCapsuleButton";
+
 import { BASE_URL } from "../Constants/Constants";
 import { CLOUDINARY_URL } from "../Constants/Constants";
 const Era = () => {
@@ -23,7 +24,7 @@ const Era = () => {
         <div className="era-grid">
           {eras.map((era) => (
             <div key={era._id} className="era-item">
-              <button className="era-button">
+              <button className="era-button" aria-label="Era-Button">
                 <Link to={`/era/${era._id}`} className="nav-link">
                   <img height="auto" width="auto" src={`${CLOUDINARY_URL}eraplant_hfgjit`} alt={era.name} className="era-img" />
                 </Link>

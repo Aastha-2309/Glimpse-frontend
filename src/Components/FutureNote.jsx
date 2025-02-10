@@ -72,7 +72,7 @@ const FutureNote = () => {
         </div>
 
         {/* Button to Open/Close the Calendar */}
-        <button className="sendButton" onClick={toggleCalendar}>
+        <button  className="sendButton" aria-label="Send Button" onClick={toggleCalendar}>
           <img height="auto" width="auto" src={`${CLOUDINARY_URL}send_icnvjb`} alt="Send" />
         </button>
       </div>
@@ -88,7 +88,7 @@ const FutureNote = () => {
               disablePast
             />
           </LocalizationProvider>
-          <button className="saveNoteButton" onClick={handleSave}>Save Note</button>
+          <button className="saveNoteButton" aria-label="Save Button" onClick={handleSave}>Save Note</button>
         </div>
       )}
     </>

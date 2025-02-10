@@ -93,7 +93,7 @@ function Signup() {
                         value={signupInfo.password}
                     />
                 </div>
-                <button className='loginButton' type='submit'>Signup</button>
+                <button className='loginButton' aria-label="Submit" type='submit'>Signup</button>
                 <span>Already have an account ? 
                     <Link className='loginLink'  to="/login">  Login</Link>
                 </span>
