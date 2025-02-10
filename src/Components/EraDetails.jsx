@@ -1,10 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import wonder from "../assets/images/wonder.png";
 import { BiSolidMoviePlay } from "react-icons/bi";
-import { RiMovie2Fill } from "react-icons/ri";
 import { FaCirclePause, FaCirclePlay} from "react-icons/fa6";
+import { BASE_URL, CLOUDINARY_URL } from "../Constants/Constants";
 
 const EraDetails = () => {
   const { id } = useParams();
@@ -15,7 +14,7 @@ const EraDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://13.233.75.216/api/api/eras/${id}`)
+      .get(`${BASE_URL}/api/eras/${id}`)
       .then((response) => setEraDetails(response.data))
       .catch((error) => console.error("Error fetching era details:", error));
   }, [id]);
@@ -57,7 +56,7 @@ const EraDetails = () => {
           .filter((detail) => detail.type === "movie")
           .map((detail) => (
             <div key={detail._id} className="movieBox">
-              <img src={`https://res.cloudinary.com/djjmj40t9/image/upload/dpr_auto,f_auto,q_auto,w_500,h_500/v1738151947/${detail.image}`} className="movieImg" alt={detail.name} />
+              <img height="auto" width="auto" src={`${CLOUDINARY_URL}${detail.image}`} className="movieImg" alt={detail.name} />
               <div className="movieName">
                 <h2>{detail.name}</h2>
                 <div className="overlayMusic">
@@ -81,7 +80,7 @@ const EraDetails = () => {
           .filter((detail) => detail.type === "music")
           .map((detail) => (
             <div key={detail._id} className="musicBox">
-          <img src={`https://res.cloudinary.com/djjmj40t9/image/upload/dpr_auto,f_auto,q_auto,w_500,h_500/v1738151947/${detail.image}`} className="movieImg" alt={detail.name} />
+          <img src={`${CLOUDINARY_URL}${detail.image}`} className="movieImg" alt={detail.name} />
               <div className="movieName">
                 <h2>{detail.name}</h2>
                 <div className="overlayMusic">
@@ -119,7 +118,7 @@ const EraDetails = () => {
             return (
               <div key={detail._id} className="movieBox">
                 <img
-                  src={`https://res.cloudinary.com/djjmj40t9/image/upload/dpr_auto,f_auto,q_auto,w_500,h_500/v1738151947/${media}`}
+                  src={`${CLOUDINARY_URL}${media}`}
                   className="movieImg"
                   alt={detail.name}
                 />

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import letter from '../assets/images/letter.png';
+import { BASE_URL, CLOUDINARY_URL } from '../Constants/Constants';
 
 const SavedNotes = () => {
   const [notes, setNotes] = useState([]); 
@@ -14,7 +14,7 @@ const SavedNotes = () => {
       }
 
       try {
-        const response = await axios.get('https://13.233.75.216/api/api/future-notes', {
+        const response = await axios.get(`${BASE_URL}/api/future-notes`, {
           headers: {
             Authorization: `Bearer ${token}`, 
           },
@@ -22,7 +22,7 @@ const SavedNotes = () => {
 
         const currentDate = new Date();
         const filteredNotes = response.data.notes.filter((note) =>
-          new Date(note.date) <= currentDate // Show only notes with dates less than or equal to today
+          new Date(note.date) <= currentDate 
         );
 
         setNotes(filteredNotes);
@@ -36,9 +36,9 @@ const SavedNotes = () => {
   }, [token]);
 
   return (
-    <div>
+   
       <div className="msgContainer">
-        <img src={letter} className="letterHead" alt="Letter Head" />
+        <img src={`${CLOUDINARY_URL}letter_ctdfpq`} className="letterHead" alt="Letter Head" />
 
         {/* Display saved notes */}
         <div  className="savedMessage">
@@ -56,7 +56,7 @@ const SavedNotes = () => {
           )}
         </div>
       </div>
-    </div>
+  
   );
 };
 

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
-import Navbar from './Navbar';
 import { useUser } from './UserContext';
+import { BASE_URL } from '../Constants/Constants';
 function Login() {
 
     const [loginInfo, setLoginInfo] = useState({
@@ -28,7 +28,7 @@ function Login() {
             return handleError('email and password are required')
         }
         try {
-            const url = `https://13.233.75.216/api/auth/login`;
+            const url = `${BASE_URL}/auth/login`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {

@@ -1,4 +1,5 @@
-import timeCap from "../assets/images/timeCapsule.png"
+
+import { CLOUDINARY_URL } from "../Constants/Constants";
 import { useUser } from './UserContext';
 import { useNavigate } from "react-router-dom";
 const TimeCapsuleButton = () => {
@@ -16,7 +17,7 @@ const TimeCapsuleButton = () => {
   return (
 
     <button title="" className="futureButton" onClick={handleFutureButton}>
-      <img className="futureImg" src={timeCap} />
+      <img height="auto" width="auto" className="futureImg" src={`${CLOUDINARY_URL}timeCapsule_cktqsu`} />
     </button>
   );
 };

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import logoSunflower from '../assets/images/logosunflower.jpg';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { handleError, handleSuccess } from '../utils';
+import { handleSuccess } from '../utils';
 import { FaUserAstronaut } from 'react-icons/fa';
 import { useUser } from './UserContext';
+import { BASE_URL, CLOUDINARY_URL } from '../Constants/Constants';
 
 const Navbar = () => {
   const [notes, setNotes] = useState([]);
@@ -18,7 +18,7 @@ const Navbar = () => {
       }
 
       try {
-        const response = await axios.get('http://localhost:8080/api/future-notes', {
+        const response = await axios.get(`${BASE_URL}/api/future-notes`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -26,7 +26,7 @@ const Navbar = () => {
 
         const currentDate = new Date();
         const filteredNotes = response.data.notes.filter(
-          (note) => new Date(note.date) <= currentDate // Show only notes with dates less than or equal to today
+          (note) => new Date(note.date) <= currentDate 
         );
         setNotes(filteredNotes.length);
       } catch (error) {
@@ -60,9 +60,9 @@ const Navbar = () => {
   const handleUnlockPast = () => {
     setNotes(0);
     if (loggedInUser) {
-      navigate('/saved-notes'); // Redirect to saved notes page
+      navigate('/saved-notes'); 
     } else {
-      navigate('/login'); // Redirect to login page
+      navigate('/login'); 
     }
   };
 
@@ -71,7 +71,7 @@ const Navbar = () => {
       <ul>
         <li>
           <Link to="/">
-            <img src={logoSunflower} alt="Logo Sunflower" className="logo-image" />
+            <img height="auto" width="auto" src={`${CLOUDINARY_URL}logosunflower_zuatwx`} alt="Logo Sunflower" className="logo-image" />
           </Link>
         </li>
         <li>

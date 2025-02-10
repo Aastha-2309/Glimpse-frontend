@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
-import Navbar from './Navbar';
+import { BASE_URL } from '../Constants/Constants';
+
 
 function Signup() {
 
@@ -28,7 +29,7 @@ function Signup() {
             return handleError('name, email and password are required')
         }
         try {
-            const url = `https://13.233.75.216/api/auth/signup`;
+            const url = `${BASE_URL}/auth/signup`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {

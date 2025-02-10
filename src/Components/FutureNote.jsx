@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import letter from '../assets/images/letter.png';
-import send from "../assets/images/send.png";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { BASE_URL, CLOUDINARY_URL } from '../Constants/Constants';
 
 const FutureNote = () => {
-  const [openCalendar, setOpenCalendar] = useState(false); // Manage calendar visibility
-  const [selectedDate, setSelectedDate] = useState(null); // Manage selected date
-  const [message, setMessage] = useState(""); // Manage message content
-  const token = localStorage.getItem('token'); // Assuming token is stored in localStorage
+  const [openCalendar, setOpenCalendar] = useState(false); 
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [message, setMessage] = useState(""); 
+  const token = localStorage.getItem('token'); 
 
   const toggleCalendar = () => {
-    setOpenCalendar(prev => !prev); // Toggle calendar visibility
+    setOpenCalendar(prev => !prev); 
   };
 
   const handleDateChange = (newValue) => {
-    setSelectedDate(newValue); // Update selected date
+    setSelectedDate(newValue); 
   };
 
   const handleSave = async () => {
@@ -34,22 +33,22 @@ const FutureNote = () => {
 
     try {
       const response = await axios.post(
-        'https://13.233.75.216/api/api/future-notes',
+        `${BASE_URL}/api/future-notes`,
         {
           message,
-          date: selectedDate.toISOString(), // Convert to ISO string for consistency
+          date: selectedDate.toISOString(), 
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Token sent as Bearer in Authorization header
+            Authorization: `Bearer ${token}`, 
           },
         }
       );
 
       alert('Future note saved successfully!');
-      setMessage(''); // Clear the message field after saving
-      setSelectedDate(null); // Clear the selected date after saving
-      setOpenCalendar(false); // Close the calendar popup after saving
+      setMessage(''); 
+      setSelectedDate(null); 
+      setOpenCalendar(false); 
     } catch (error) {
       console.error(error.response?.data || error);
       alert('There was an error saving your note: ' + (error.response?.data?.message || error.message));
@@ -59,9 +58,8 @@ const FutureNote = () => {
   return (
     <>
       <div className="msgContainer">
-        <img src={letter} className="letterHead" alt="Letter Head" />
+        <img height="auto" width="auto" src={`${CLOUDINARY_URL}letter_ctdfpq`} className="letterHead" alt="Letter Head" />
 
-        {/* Textarea for Message */}
         <div className="msgBody">
           <textarea
             name="postContent"
@@ -75,7 +73,7 @@ const FutureNote = () => {
 
         {/* Button to Open/Close the Calendar */}
         <button className="sendButton" onClick={toggleCalendar}>
-          <img src={send} alt="Send" />
+          <img height="auto" width="auto" src={`${CLOUDINARY_URL}send_icnvjb`} alt="Send" />
         </button>
       </div>
 

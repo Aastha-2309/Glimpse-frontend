@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
 
 // Create context
 const UserContext = createContext();
@@ -22,8 +22,6 @@ export const UserProvider = ({ children }) => {
     );
 };
 
-// Custom hook to use the context
-// eslint-disable-next-line react-refresh/only-export-components
 export const useUser = () => {
     return useContext(UserContext);
 };

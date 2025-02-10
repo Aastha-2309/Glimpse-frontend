@@ -8,7 +8,6 @@ import Subscription from './Components/Subscription';
 import Navbar from './Components/Navbar';
 import EraDetails from './Components/EraDetails';
 import FutureNote from './Components/FutureNote';
-import React, { useEffect, useState } from 'react'
 
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -25,11 +24,11 @@ function App() {
 
 
   return (
-    <><Background/>
-
+    <>
+<Background/>
     <UserProvider>
     <Router>
-      
+    
     
 
 <Navbar/>

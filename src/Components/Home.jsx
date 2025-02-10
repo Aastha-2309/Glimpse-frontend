@@ -1,13 +1,10 @@
-import { Link } from 'react-router-dom';
 import About from './About';  
 import Era from './Era';   
 import Subscription from './Subscription'; 
 import TravelButton from './TravelButton'; 
-import logoSunflower from '../assets/images/logosunflower.jpg'; 
 import TimeCapsuleButton from './TimeCapsuleButton';
-import Navbar from './Navbar';
 import { ToastContainer } from 'react-toastify';
-import astronaut from '../assets/images/astronaut.jpg'
+import { CLOUDINARY_URL } from '../Constants/Constants';
 
 
 const Home = () => {
@@ -19,7 +16,7 @@ const Home = () => {
 
       <div id="home" className="sec">
         <div>
-          <img src={astronaut} alt="Astronaut" className="centered-image" />
+          <img height="auto" width="auto" src={`${CLOUDINARY_URL}astronaut_dplspn`} alt="Astronaut" className="centered-image" />
         </div>
         <TravelButton />
         <TimeCapsuleButton/>
