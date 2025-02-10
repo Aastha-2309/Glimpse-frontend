@@ -545,13 +545,13 @@ p {
 }
 
 .centered-image {
-  display: flex;
-  align-items: center;
-  margin: auto;
-  width: 430px;
-  max-width: 85%;
-  max-height: 75%;
-  padding-top: 50px;
+  display: block;
+  margin: 0 auto;
+  width: 100%;  /* Makes the image responsive */
+  max-width: 85%;  /* Restricts it from going too wide */
+  height: auto;
+  padding-top: 50px;  /* Adjust if needed */
+  object-fit: cover;  /* Ensures aspect ratio is maintained */
 }
 
 li {
