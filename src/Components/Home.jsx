@@ -3,8 +3,8 @@ import Era from './Era';
 import Subscription from './Subscription'; 
 import TravelButton from './TravelButton'; 
 import TimeCapsuleButton from './TimeCapsuleButton';
-import { ToastContainer } from 'react-toastify';
-import { CLOUDINARY_URL } from '../Constants/Constants';
+
+
 
 
 const Home = () => {
@@ -49,7 +49,7 @@ const Home = () => {
         <Subscription />
       </div>
 
-      <ToastContainer className="toastt" />
+     
 
 
     </div>

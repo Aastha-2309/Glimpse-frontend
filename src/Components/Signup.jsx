@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify';
+
 import { handleError, handleSuccess } from '../utils';
 import { BASE_URL } from '../Constants/Constants';
 
@@ -98,7 +98,7 @@ function Signup() {
                     <Link className='loginLink'  to="/login">  Login</Link>
                 </span>
             </form>
-            <ToastContainer className="toastt" />
+        
 
         </div>
         </div>
